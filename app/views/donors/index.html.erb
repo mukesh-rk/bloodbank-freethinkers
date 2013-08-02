@@ -1,0 +1,30 @@
+<h1>Listing donors</h1>
+<p>To edit your details, please drop a mail to <b>mukesh.eledath@gmail.com</b> from your provided email</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>Blood group</th>
+    <th>District</th>    
+	<th>Email</th>
+    <th>District</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @donors.each do |donor| %>
+  <tr>
+    <td><%= donor.name %></td>
+    <td><%= donor.contact %></td>
+    <td><%= donor.blood_group.bloodgroup %></td>
+	<td><%= donor.district %></td>    
+	<td><%= donor.email %></td>
+    <td><%= link_to 'Show', donor %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Donor', new_donor_path %>

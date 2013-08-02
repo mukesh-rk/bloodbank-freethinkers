@@ -1,0 +1,43 @@
+<%= form_for(@donor) do |f| %>
+  <% if @donor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@donor.errors.count, "error") %> prohibited this donor from being saved:</h2>
+
+      <ul>
+      <% @donor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </div>
+  <div class="field">
+    <%= f.label :blood_group_id %><br />
+    <%= f.collection_select(:blood_group_id, @groups, :id, :bloodgroup) %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :district %><br />
+    <%= f.select(:district, options_for_select([['Kasargod', 'Kasrargod'],['Kannur', 'Kannur'], ['Kozhikkode', 'Kozhikkode'],
+												['Waynad', 'Waynad'],['Malappuram', 'Malappuram'],['Palakkad', 'Palakkad'],
+												['Thrissur', 'Thrissur'],['Idukki', 'Idukki'],['Kottayam', 'Kottayam'],
+												['Ernakulam', 'Ernakulam'],['Alappuzha', 'Alappuzha'],['Pathanamthitta', 'Pathanamthitta'],
+												['Kollam', 'Kollam'],['Thiruvanathapuram', 'Thiruvanathapuram']])) %>	
+  </div>	
+  
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

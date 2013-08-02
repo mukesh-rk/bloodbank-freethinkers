@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @donor.name %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @donor.contact %>
+</p>
+
+<p>
+  <b>Blood group:</b>
+  <%= @donor.blood_group_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @donor.email %>
+</p>
+
+<%= link_to 'Back', donors_path %>
