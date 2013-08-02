@@ -20,8 +20,8 @@ test:
 
 production:
   adapter: postgresql
-  database: project_ip_production
-  host: localhost
+  database: d2vs03645obubf
+  host: ec2-54-225-91-60.compute-1.amazonaws.com
   encoding: UTF-8
-  username: postgres
-  password: postgres123
+  username: tawxtawtokuhkf
+  password: HVw8x2WHLkffyeoGiHBS3YDvxy
